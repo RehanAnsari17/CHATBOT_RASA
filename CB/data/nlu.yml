@@ -1,0 +1,115 @@
+version: "3.0"
+nlu:
+- intent: greet
+  examples: |
+    - Hello
+    - Hi
+    - Hey
+    - Good morning
+    - Good evening
+    - Hi there
+    - How are you
+    - Is anyone there?
+    - Hola
+    - Good day
+
+- intent: goodbye
+  examples: |
+    - Thank you
+    - Thanks
+    - Bye
+    - Goodbye
+    - See you later
+    - Farewell
+    - Catch you later
+    - Talk to you soon
+    - Thanks for your help
+    - Appreciate it
+
+- intent: book_ticket
+  examples: |
+    - I want to book a train ticket from [Lucknow NR](departure_station) to [Visakhapatnam](destination_station) on [July 5](travel_date)
+    - Book a train ticket for me from [Lucknow NR](departure_station) to [Visakhapatnam](destination_station)
+    - Can you help me book a train from [Lucknow NR](departure_station) to [Visakhapatnam](destination_station) on [July 5](travel_date)?
+    - I need to purchase a train ticket from [Lucknow NR](departure_station) to [Visakhapatnam](destination_station)
+    - Reserve a ticket from [Lucknow NR](departure_station) to [Visakhapatnam](destination_station) on [July 5](travel_date)
+    - I'd like to book a train ticket from [Lucknow NR](departure_station) to [Visakhapatnam](destination_station) on [July 5](travel_date)
+    - Please book a train from [Lucknow NR](departure_station) to [Visakhapatnam](destination_station) for me on [July 5](travel_date)
+    - I'd like to reserve a train ticket from [Lucknow NR](departure_station) to [Visakhapatnam](destination_station)
+    - Can you assist me in booking a train from [Lucknow NR](departure_station) to [Visakhapatnam](destination_station)?
+    - Help me book a train ticket from [Lucknow NR](departure_station) to [Visakhapatnam](destination_station) on [July 5](travel_date)
+
+- intent: provide_details
+  examples: |
+    - My name is [John](user_name)
+    - I am [30](age) years old
+    - I prefer [AC 3-Tier](class_type) class
+    - I want to travel at [Evening](travel_time)
+    - Number of passengers is [2](number_of_passengers)
+    - I will be paying via [Credit Card](payment_method)
+    - I need a [One-way](ticket_type) ticket
+    - I'm [25](age) years old
+    - I'd like [3](number_of_passengers) passengers
+    - Please book [4](number_of_passengers) tickets
+    - My gender is [Male](gender)
+    - I want to book for [2](number_of_passengers) people
+    - We are [3](number_of_passengers) passengers
+    - Book for [5](number_of_passengers) travelers
+
+- intent: fare_enquiry
+  examples: |
+    - How much is the ticket price from [Chennai Central](departure_station) to [Bangalore City](destination_station)?
+    - What is the fare for train number [12345](train_number)?
+    - Ticket cost from [Delhi Junction](departure_station) to [Mumbai CST](destination_station)
+    - Price of a train ticket from [Chennai Central](departure_station) to [Bangalore City](destination_station) on [July 5](travel_date)
+    - How much does a ticket from [Chennai Central](departure_station) to [Bangalore City](destination_station) cost?
+    - Fare for [Sleeper](class_type) from [Chennai Central](departure_station) to [Bangalore City](destination_station)
+    - What is the fare for [AC 3-Tier](class_type) class?
+    - Tell me the ticket price from [Chennai Central](departure_station) to [Bangalore City](destination_station)
+    - Price details for train from [Chennai Central](departure_station) to [Bangalore City](destination_station)
+    - How much do I need to pay for a train ticket from [Chennai Central](departure_station) to [Bangalore City](destination_station)?
+
+
+- intent: seat_availability
+  examples: |
+    - Are there seats available on train number [12345](train_number) on [July 5](travel_date)?
+    - Check seat availability for train [12345](train_number)
+    - Is there a vacant seat on train [12345](train_number)?
+    - Available seats for train number [12345](train_number) on [July 5](travel_date)
+    - Can you check if seats are available on train [12345](train_number)?
+    - Is seat availability open for train [12345](train_number) on [July 5](travel_date)?
+    - Seats available on train [12345](train_number) for [July 5](travel_date)
+    - How many seats are left on train [12345](train_number)?
+    - Seat status for train [12345](train_number) on [July 5](travel_date)
+    - Are seats open on train [12345](train_number)?
+
+- intent: cancellation_policy
+  examples: |
+    - How can I cancel my ticket?
+    - What is the cancellation policy?
+    - Cancel my train booking
+    - Refund for cancelled tickets
+    - How to cancel my train ticket?
+    - Ticket cancellation process
+    - Can I cancel my booking?
+    - What are the steps to cancel a ticket?
+    - How do I get a refund for my ticket?
+    - Cancellation fees for train tickets
+
+- intent: help
+  examples: |
+    - I need help
+    - Can you assist me?
+    - Help me with booking
+    - Support needed
+    - I need assistance
+    - Can you help me?
+    - I require help
+    - Assistance needed
+    - Help with train booking
+    - I need support
+
+
+- intent: unknown
+  examples: |
+    - [No examples needed for unknown intents]

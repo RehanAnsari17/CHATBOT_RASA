@@ -1,0 +1,131 @@
+version: "3.0"
+
+intents:
+  - greet
+  - goodbye
+  - book_ticket
+  - provide_details
+  - fare_enquiry
+  - seat_availability
+  - cancellation_policy
+  - help
+  - unknown
+
+entities:
+  - departure_station
+  - destination_station
+  - travel_date
+  - number_of_passengers
+  - class_type
+  - payment_method
+  - ticket_type
+  - user_name
+  - age
+  - travel_time
+  - gender
+  - train_number
+
+slots:
+  departure_station:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: departure_station
+
+  destination_station:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: destination_station
+
+  travel_date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: travel_date
+
+  number_of_passengers:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: number_of_passengers
+
+  class_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: class_type
+
+  payment_method:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: payment_method
+
+  ticket_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: ticket_type
+
+  user_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: user_name
+
+  age:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: age
+
+  travel_time:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: travel_time
+
+  gender:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: gender
+
+  train_number:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: train_number
+
+responses:
+  utter_greet:
+    - text: "Hello! Welcome to Indian Railways Online Booking. How can I assist you with your train ticket today?"
+
+  utter_goodbye:
+    - text: "You're welcome! If you need any more assistance, feel free to ask. Have a great day!"
+
+  utter_book_ticket:
+    - text: "Great! You're booking a ticket from {departure_station} to {destination_station} on {travel_date}. How many passengers are traveling and which class would you prefer?"
+
+  utter_fare_enquiry:
+    - text: "Ticket prices vary based on the train type, class, and travel date. Please provide your travel details, and I can give you the exact fare."
+
+  utter_confirmation:
+    - text: "Your booking for {number_of_passengers} passengers in {class_type} class has been confirmed. Is there anything else I can help you with?"
+
+  utter_cancellation_policy:
+    - text: "You can cancel your ticket by logging into your account, navigating to 'My Bookings', and selecting the ticket you wish to cancel. Refunds are processed based on our cancellation policy, which varies depending on the time of cancellation before departure."
+
+  utter_help:
+    - text: "Of course! I'm here to help you with train bookings, cancellations, payments, and any other queries you might have. How can I assist you today?"
+
+  utter_unknown:
+    - text: "I'm sorry, I didn't understand that. Could you please rephrase?"
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+actions:
+  - action_check_seat_availability
+  - action_book_ticket

@@ -1,0 +1,38 @@
+version: "3.0"
+stories:
+- story: Greet and Goodbye
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Book a Train Ticket
+  steps:
+  - intent: book_ticket
+  - action: utter_book_ticket
+  - intent: provide_details
+  - action: action_book_ticket
+  - action: action_check_seat_availability
+  - action: utter_confirmation
+
+- story: Fare Enquiry
+  steps:
+  - intent: fare_enquiry
+  - action: utter_fare_enquiry
+
+- story: Seat Availability
+  steps:
+  - intent: seat_availability
+  - action: action_check_seat_availability
+
+- story: Cancellation Policy
+  steps:
+  - intent: cancellation_policy
+  - action: utter_cancellation_policy
+
+- story: Help
+  steps:
+  - intent: help
+  - action: utter_help
+
