@@ -87,7 +87,50 @@
         </div>
       </div>
 
-
+      <script>
+        // JavaScript to handle chatbot messages
+        const messageInput = document.getElementById("message");
+        const chatContainer = document.querySelector(".w-full");
+      
+        async function sendMessageToRasa(message) {
+          const response = await fetch("http://localhost:5005/webhooks/rest/webhook", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ sender: "user", message: message }),
+          });
+          return response.json();
+        }
+      
+        function appendMessage(text, isBot = true) {
+          const messageContainer = document.createElement("div");
+          messageContainer.className = isBot ? "Right" : "left";
+      
+          const messageDiv = document.createElement("div");
+          messageDiv.className = isBot ? "chat_bot" : "human";
+          messageDiv.textContent = text;
+      
+          messageContainer.appendChild(messageDiv);
+          chatContainer.appendChild(messageContainer);
+      
+          // Scroll to the bottom of chat
+          chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+      
+        document.querySelector("form").addEventListener("submit", async (event) => {
+          event.preventDefault();
+          const userMessage = messageInput.value.trim();
+          if (!userMessage) return;
+      
+          // Append user message to chat
+          appendMessage(userMessage, false);
+          messageInput.value = ""; // Clear input
+      
+          // Send message to Rasa backend and append response
+          const responses = await sendMessageToRasa(userMessage);
+          responses.forEach((response) => appendMessage(response.text));
+        });
+      </script>
+      
       
     
 </body>
