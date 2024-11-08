@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .Right{
+        color: rgb(0, 0, 0);
+        
+       
+        display: flex;
+        justify-content: flex-end;
+        margin-left: 8vw;
+
+        
+      }
+      .chat_bot{
+        background-color: rgb(241, 206, 206);
+        padding: 1.5vw ;
+        border-radius: 10px 0px 10px 10px;
+        font-size: 2vh;
+        text-align: left;
+
+      }
+
+      .left{
+        color: rgb(0, 0, 0);
+        
+       
+        display: flex;
+        justify-content: flex-start;
+        margin-right: 8vw;
+
+      }
+      .human{
+        background-color: rgb(217, 214, 214);
+        padding: 1vw 1.5vw;
+        border-radius: 0px 10px 10px 10px;
+        font-size: 2vh;
+
+      }
+
+    </style>
+   
+</head>
+<body>
+    <div class="w-screen h-screen bg-gray-50 flex flex-col" x-data="chat">
+
+        <div class="bg-gray-800 flex justify-center p-4">
+          <span class="text-white text-bold">Traveller</span>
+        </div>
+      
+        <div class="w-full max-w-screen-lg flex-1 m-auto p-8 my-4 pb-20 space-y-4">
+          <div class="Right">
+            <div class="chat_bot">
+              How Can I Help You?
+        
+            </div>
+
+          </div>
+         
+          <div class="left">
+            <div class="human">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam temporibus, odio quas cum deleniti aspernatur aliquam sit numquam. Rem, repellendus.
+            </div>
+          </div>
+          <div class="Right">
+            <div class="chat_bot">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem?
+        
+            </div>
+
+          </div>
+          
+          
+         
+         
+      
+        </div>
+        <div class="fixed inset-x-0 bottom-0 bg-gray-200">
+          <form class="max-w-screen-lg m-auto w-full p-4 flex space-x-4 justify-center items-center" >
+            <input id="message" type="text" autocomplete="off" class="border rounded-md p-2 flex-1 border-gray-300" x-model="newMessage" placeholder="Your message..." />
+            <button class="bg-gray-800 text-white px-4 py-2 rounded-md" :class="{'opacity-50' : waitingOnResponse}">Send</button>
+          </form>
+        </div>
+      </div>
+
+
+      
+    
+</body>
+</html>
