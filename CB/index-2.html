@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .chat_bot,
+      .chat-box {
+        padding: 1.5vw;
+        border-radius: 10px 0px 10px 10px;
+        font-size: 2vh;
+        text-align: left;
+      }
+
+      .user-message {
+        padding: 1.5vh;
+        border-radius: 0px 10px 10px 10px;
+        font-size: 2vh;
+        background-color: rgb(217, 214, 214);
+
+        margin-bottom: 4vh;
+        margin-right: 10vw;
+        text-transform: capitalize;
+      }
+      .bot-message {
+        background-color: rgb(241, 206, 206);
+        padding: 1.5vh;
+        border-radius: 10px 0px 10px 10px;
+        font-size: 2vh;
+        text-align: left;
+        display: flex;
+        justify-content: flex-end;
+        margin-left: 10vw;
+        margin-bottom: 4vh;
+        text-transform: capitalize;
+      }
+      .human {
+        background-color: rgb(217, 214, 214);
+        padding: 1vw 1.5vw;
+        border-radius: 0px 10px 10px 10px;
+        font-size: 2vh;
+      }
+      #user-input {
+        width: 50vw;
+        margin-right: 2vh;
+      }
+
+      .container {
+        text-align: center;
+        max-width: 900px;
+        margin: auto;
+        margin-top: 10vw;
+      }
+
+      /* Header Section */
+      .header {
+        margin-bottom: 40px;
+      }
+
+      .logo {
+        font-size: 48px;
+        margin-bottom: 10px;
+      }
+
+      .highlight {
+        color: #f44336; /* Red color for emphasis */
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .header p {
+        font-size: 1.2rem;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="w-screen h-screen bg-gray-50 flex flex-col" x-data="chat">
+      <div class="bg-gray-800 flex justify-center p-4">
+        <span class="text-white text-bold">Traveller</span>
+      </div>
+
+      <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+          <div class="logo">
+            <svg
+              width="150"
+              height="150"
+              viewBox="0 0 200 200"
+              xmlns="http://www.w3.org/2000/svg"
+              style="display: block; margin: auto"
+            >
+              <!-- Robot Body -->
+              <rect
+                x="30"
+                y="50"
+                width="140"
+                height="120"
+                rx="20"
+                ry="20"
+                fill="#FFFFFF"
+                stroke="#333"
+                stroke-width="4"
+              />
+
+              <!-- Antenna -->
+              <line
+                x1="100"
+                y1="30"
+                x2="100"
+                y2="50"
+                stroke="#333"
+                stroke-width="4"
+              />
+              <circle
+                cx="100"
+                cy="20"
+                r="10"
+                fill="#f44336"
+                stroke="#333"
+                stroke-width="4"
+              />
+
+              <!-- Eyes -->
+              <circle cx="70" cy="100" r="12" fill="#333" />
+              <circle cx="130" cy="100" r="12" fill="#333" />
+              <circle cx="65" cy="95" r="5" fill="#FFFFFF" />
+              <circle cx="125" cy="95" r="5" fill="#FFFFFF" />
+
+              <!-- Mouth -->
+              <rect
+                x="75"
+                y="130"
+                width="50"
+                height="10"
+                rx="5"
+                ry="5"
+                fill="#333"
+              />
+            </svg>
+          </div>
+          <h1>Welcome to the <span class="highlight">Traveller.AI</span></h1>
+          <p>Your AI Chat Assistant</p>
+        </header>
+      </div>
+
+      <div
+        class="w-full max-w-screen-lg flex-1 m-auto p-8 my-4 pb-20 space-y-4"
+      >
+        <div id="chat-box" class="chat-box">
+          <div class="bot-message">
+            <div class="right">how can i Help you..</div>
+          </div>
+          <!-- Chat messages will appear here -->
+        </div>
+      </div>
+
+      <div class="fixed inset-x-0 bottom-0 bg-gray-200">
+        <div
+          class="max-w-screen-lg m-auto w-full p-4 flex space-x-4 justify-center items-center"
+        >
+          <div class="input-area" class="fixed inset-x-0 bottom-0 bg-gray-200">
+            <input
+              type="text"
+              id="user-input"
+              placeholder="Your message..."
+              class="border rounded-md p-2 flex-1 border-gray-300"
+            />
+            <button
+              onclick="sendMessage()"
+              class="bg-gray-800 text-white px-4 py-2 rounded-md"
+            >
+              Send
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="chatbot.js"></script>
+  </body>
+</html>
